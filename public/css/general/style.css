@@ -9,14 +9,74 @@
 #content{
     width:100%;
 }
+.xitem{
+    margin-top: 17px;
+    margin-right: 35px;
+}
+.xdrop-down{
+    width: 100px;
+    padding-top: 3px;
+}
+
+.xinput{
+    border-radius: 8px !important;
+    height: 30px;
+    font-size: 13px !important;
+    border: 1px solid #c3c3c3 !important;
+}
+
+.xsearch{
+    width: 250px;
+}
+.xsearch-btn:focus{
+    outline: none;
+}
+
+.xsearch-btn i{
+    margin-left: -35px;
+color: #8b7c7c;}
+
+.badge-wrap{
+    font-size: 14px;
+    position: relative;
+}
+
+.x-badge{
+    height: 7px;
+    background: #1e97ff;
+    width: 7px;
+    border-radius: 50%;
+    display: block;
+    z-index: 555;
+    position: absolute;
+    top: 2px;
+    right: -2px;
+}
+
+.badge-wrap:hover{
+    color: black;
+    cursor: pointer;
+}
 
 #mini-side{
     min-width: 50px;
     max-width: 50px;
     min-height: 100vh;
     background: #1e97ff;
-    color: #fff;
+    padding-left: 7px;color: #fff;
 }
+
+#mini-side ul.components {
+    padding: 105px 0;
+}
+
+#mini-side ul li{
+    padding: 15px 12px;
+}
+
+#mini-side ul li:hover{
+    background: #1e8ff1;
+border-right: 4px solid #fff;transition: all 0.3s;}
 
 /* Sidebar CSS */
 #sidebar {
@@ -36,11 +96,12 @@
 }
 
 #sidebarCollapse {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background: #ffffff;
-    margin-top: 10px;
+    margin-top: 17px;
     margin-right: 20px;
+    margin-left: -10px;
 }
 
 #sidebarCollapse:focus{
@@ -173,7 +234,7 @@ margin-left: -13px;}
 #sidebar ul li a:hover {
     color: #8e8e8f;
     background: #fff;
-    border-right: 2px solid #1e97ff;
+    border-right: 2px solid #8e8e8f;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
