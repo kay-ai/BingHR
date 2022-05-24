@@ -140,7 +140,7 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-sm xbtn-primary">Add User</button>
+                    <button type="submit" class="btn btn-sm xbtn-primary">Submit</button>
                     <button type="button" class="btn btn-sm xbtn-secondary" data-dismiss="modal">Cancel</button>
                 </div>
             </form>
