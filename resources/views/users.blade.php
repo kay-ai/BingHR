@@ -41,26 +41,61 @@
                                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                                     </td>
                                 </tr>
-                                <tr class="text-secondary">
-                                    <td scope="row">
-                                        <div class="d-flex">
-                                            <div class="avatar">
-                                                <img src="{{asset('img/avatar/female.jpg')}}" class="img-fluid ximg">
-                                            </div>
-                                            <div>
-                                                <p class="xname">Ina Hogan</p>
-                                                <p>windler.warren@runte.net</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-blue text-white">Admin</span></td>
-                                    <td>24th Oct. 2015</td>
-                                    <td>Team Lead</td>
-                                    <td>
-                                        <i class="fa fa-pencil pr-2" aria-hidden="true"></i>
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
+                                @if ($users)
+                                    @foreach ($users as $user)
+                                        <tr class="text-secondary">
+                                            <td scope="row">
+                                                <div class="d-flex">
+                                                    <div class="avatar">
+                                                        <img src="{{asset('img/avatar/female.jpg')}}" class="img-fluid ximg">
+                                                    </div>
+                                                    <div>
+                                                        <p class="xname">{{ucfirst(strtolower($user->first_name))}} {{ucfirst(strtolower($user->last_name))}}</p>
+                                                        <p>{{$user->email}}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                @switch($user->role)
+                                                    @case($user->role == 'employee')
+                                                        <span class="badge bg-light-blue">Employee</span>
+                                                        @break
+                                                    @case($user->role == 'hr_admin')
+                                                        <span class="badge bg-green text-white">HR Admin</span>
+                                                        @break
+                                                    @case($user->role == 'admin')
+                                                        <span class="badge bg-blue text-white">Admin</span>
+                                                        @break
+                                                    @case($user->role == 'super_admin')
+                                                        <span class="badge bg-red text-white">Super Admin</span>
+                                                        @break
+                                                @endswitch
+                                            </td>
+                                            <td>{{Carbon\Carbon::parse($user->created_at)->format('d-m-Y')}}</td>
+                                            <td>
+                                                @switch($user->role)
+                                                    @case($user->role == 'employee')
+                                                        Web Developer
+                                                        @break
+                                                    @case($user->role == 'hr_admin')
+                                                        HR
+                                                        @break
+                                                    @case($user->role == 'admin')
+                                                        Team Lead
+                                                        @break
+                                                    @case($user->role == 'super_admin')
+                                                        CEO and Founder
+                                                        @break
+                                                @endswitch
+                                            </td>
+                                            <td>
+                                                <i class="fa fa-pencil pr-2" aria-hidden="true"></i>
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @endif
+
                             </tbody>
                         </table>
                     </div>

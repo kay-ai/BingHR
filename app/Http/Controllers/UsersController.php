@@ -14,9 +14,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $model)
     {
-        return view('users');
+        return view('users', ['users' => $model->orderBy('first_name', 'asc')->get()]);
     }
 
     /**

@@ -412,7 +412,19 @@ table.dataTable .badge{
 
 .bg-blue{
     background: #1e8ff1 !important;
-padding: 6px 30px !important;}
+padding: 6px 30px !important;
+}
+
+.bg-green{
+    background: #33e6a9 !important;
+    padding: 6px 20px !important;
+}
+
+.bg-light-blue{
+    background: #f3f6ff !important;
+    color: #8aa1b1 !important;
+    padding: 6px 20px !important;
+}
 
 .ximg{
     width: 35px;
