@@ -18,8 +18,8 @@
                 </div>
                 <div class="modal-footer">
                     <center>
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
-                        <button type="submit" name="" class="btn btn-danger" data-dismiss="modal" onclick="formSubmit()">Yes, Delete</button>
+                        <button type="button" class="btn xbtn-primary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" name="" class="btn xbtn-secondary" data-dismiss="modal" onclick="formSubmit()">Yes, Delete</button>
                     </center>
                 </div>
             </div>

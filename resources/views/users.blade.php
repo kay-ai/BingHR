@@ -23,26 +23,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-secondary">
-                                    <td scope="row">
-                                        <div class="d-flex">
-                                            <div class="avatar">
-                                                <img src="{{asset('img/avatar/male.jpg')}}" class="img-fluid ximg">
-                                            </div>
-                                            <div>
-                                                <p class="xname">David Wanger</p>
-                                                <p>david_wanger@example.com</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-red text-white">Super Admin</span></td>
-                                    <td>24th Oct. 2015</td>
-                                    <td>CEO and Founder</td>
-                                    <td>
-                                        <i class="fa fa-pencil pr-2" aria-hidden="true"></i>
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
                                 @if ($users)
                                     @foreach ($users as $user)
                                         <tr class="text-secondary">
