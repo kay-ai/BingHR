@@ -1,5 +1,7 @@
 @extends('layouts.app', ['activePage' => 'users', 'titlePage' => __('Users')])
 @include('includes.add-user')
+@include('includes.edit-user')
+@include('includes.delete-user')
 @include('includes.messages')
 @section('content')
     <div class="py-4">
@@ -89,8 +91,13 @@
                                                 @endswitch
                                             </td>
                                             <td>
-                                                <i class="fa fa-pencil pr-2" aria-hidden="true"></i>
-                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                <a class="edit-btn" data-toggle="modal" data-target="#edit-user" onclick="editUserData({{$user->id}})" href="javascript:void(0);" role="button">
+                                                    <i class="fa fa-pencil pr-2" aria-hidden="true"></i>
+                                                </a>
+
+                                                <a class="delete-btn" data-toggle="modal" data-target="#delete-btn" onclick="deleteData({{$user->id}})" href="javascript:void(0);" role="button">
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach

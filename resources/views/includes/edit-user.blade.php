@@ -1,41 +1,41 @@
 <!-- Modal -->
-<div class="modal fade" id="add-user" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+<div class="modal fade" id="edit-user" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document" style="max-width: 900;">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Add User</h5>
+                <h5 class="modal-title">Edit User</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
-            <form action="{{route('users.store')}}" method="POST" enctype="multipart/form-data">
+            <form id="edit-form" action="" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body p-0 mt-2">
                     <div class="p-3">
                         <div class="row mb-3">
                             <div class="col-md-12 ">
-                                <input class="xinput full-width" name="employee_id" type="text" placeholder="Employee ID *" value="{{old('employee_id')}}" required>
+                                <input class="xinput full-width" name="employee_id" type="text" placeholder="Employee ID *" value="" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 pr-2">
-                                <input class="xinput full-width" name="first_name" type="text" placeholder="First Name *" value="{{old('first_name')}}" required>
+                                <input class="xinput full-width" name="first_name" type="text" placeholder="First Name *" value="" required>
                             </div>
                             <div class="col-md-6 pl-2">
-                                <input class="xinput full-width" name="last_name" type="text" placeholder="Last Name *" value="{{old('last_name')}}" required>
+                                <input class="xinput full-width" name="last_name" type="text" placeholder="Last Name *" value="" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 pr-2">
-                                <input class="xinput full-width" name="email" type="text" placeholder="Email *" value="{{old('email')}}" required>
+                                <input class="xinput full-width" name="email" type="text" placeholder="Email *" value="" required>
                             </div>
 
                             <div class="col-md-4 px-2">
-                                <input class="xinput full-width" name="phone" type="text" placeholder="Mobile Number" value="{{old('phone')}}">
+                                <input class="xinput full-width" name="phone" type="text" placeholder="Mobile Number" value="">
                             </div>
                             <div class="col-md-4 pl-2">
                                 <select name="role" id="" class="xinput xdrop-down full-width">
-                                    <option value="" selected>Select Role Type</option>
+                                    <option value="" selected></option>
                                     <option value="admin">Admin</option>
                                     <option value="employee">Employee</option>
                                     <option value="hr_admin">HR Admin</option>
@@ -44,10 +44,10 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 pr-2">
-                                <input class="xinput full-width" name="username" type="text" placeholder="Username *" value="{{old('username')}}" required>
+                                <input class="xinput full-width" name="username" type="text" placeholder="Username *" value="" required>
                             </div>
                             <div class="col-md-4 px-2">
-                                <input class="xinput full-width" name="password" type="password" placeholder="Password *" value="{{old('password')}}" required>
+                                <input class="xinput full-width" name="password" type="password" placeholder="Password *" value="">
                             </div>
                             <div class="col-md-4 pl-2">
                                 <input class="xinput full-width" name="password_confirmation" type="password" placeholder="Confirm Password *">
@@ -147,3 +147,35 @@
         </div>
     </div>
 </div>
+
+@push('js')
+    <script>
+        function editUserData(userid) {
+            $.ajax({
+                url: '/edit-user/'+ userid,
+                type: 'POST',
+                data: {
+                        _token: '{{csrf_token()}}'
+                    },
+                dataType: 'json',
+                beforeSend: function(){
+                    $('#loading-edit-user').removeClass('hide');
+                },
+                success: function (response) {
+                    if (response.user.length == 0) {
+                        console.log( "No User Found");
+                    } else {
+                        // set values
+                        $('#edit-form').attr('action', '{{ route("users.edit", ":userid") }}');
+                        $('.v-fname').val( response.user.fname );
+                    }
+                },
+                complete: function(){
+                    $('#loading-edit-user').addClass('hide');
+                }
+            });
+        }
+    </script>
+
+
+@endpush

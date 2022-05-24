@@ -29,6 +29,12 @@ class UsersController extends Controller
         //
     }
 
+    public function editUser(Request $request, $id)
+    {
+        $data['user'] = User::find($id);
+        return response()->json($data);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -105,6 +111,13 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(auth()->user()->role == 'admin'){
+            $user = User::findOrFail($id);
+            $user->delete();
+
+            return back()->with('success', 'User Deleted Successfully');
+        }else{
+            return back()->with('error', 'Unauthorized Action');
+        }
     }
 }

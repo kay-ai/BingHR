@@ -23,5 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
     })->name('dashboard');
 
     Route::resource('users', UsersController::class);
+
+    Route::post('edit-user/{id}', [UsersController::class, 'editUser']);
 });
 require __DIR__.'/auth.php';
