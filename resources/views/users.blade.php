@@ -1,8 +1,11 @@
 @extends('layouts.app', ['activePage' => 'users', 'titlePage' => __('Users')])
+@include('includes.add-user')
 @section('content')
     <div class="py-4">
         <div class="max-w-7xl px-4">
-            <a class="btn btn-sm btn-primary mb-3 ml-auto d-table" href="#" role="button">Add User</a>
+            <a class="btn btn-sm xbtn-success mb-3 ml-auto d-table" href="javascript:void(0);" role="button" data-toggle="modal" data-target="#add-user">
+                Add User
+            </a>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-3 bg-white border-b border-gray-200">
                     <div class="row">
