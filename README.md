@@ -21,6 +21,5 @@ This will be for your database.
 * Edit .env file, <br> Replace DB_DATABASE & DB_USERNAME with the new database credentials created above
 * Run <code> php artisan migrate </code>
 * Run <code> php artisan db:seed </code>
-* Run <code> php artisan serve</code
-
+* Run <code> php artisan serve </code>
 * You are now all set
