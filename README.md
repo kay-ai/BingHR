@@ -4,4 +4,5 @@
 
 <i> Below are Steps to run this project </i>
 
-<i>
+<ol> Clone the Repository 
+<code> git clone https://gitHub.com/kay-ai/BingHR.git </code>
