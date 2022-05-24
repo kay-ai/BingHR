@@ -14,27 +14,27 @@
                     <div class="p-3">
                         <div class="row mb-3">
                             <div class="col-md-12 ">
-                                <input class="xinput full-width" name="employee_id" type="text" placeholder="Employee ID *" value="" required>
+                                <input class="xinput full-width" id="employee_id" name="employee_id" type="text" placeholder="Employee ID *" value="" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 pr-2">
-                                <input class="xinput full-width" name="first_name" type="text" placeholder="First Name *" value="" required>
+                                <input class="xinput full-width" id="first_name" name="first_name" type="text" placeholder="First Name *" value="" required>
                             </div>
                             <div class="col-md-6 pl-2">
-                                <input class="xinput full-width" name="last_name" type="text" placeholder="Last Name *" value="" required>
+                                <input class="xinput full-width" id="last_name" name="last_name" type="text" placeholder="Last Name *" value="" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 pr-2">
-                                <input class="xinput full-width" name="email" type="text" placeholder="Email *" value="" required>
+                                <input class="xinput full-width" id="email" name="email" type="text" placeholder="Email *" value="" required>
                             </div>
 
                             <div class="col-md-4 px-2">
-                                <input class="xinput full-width" name="phone" type="text" placeholder="Mobile Number" value="">
+                                <input class="xinput full-width" id="phone" name="phone" type="text" placeholder="Mobile Number" value="">
                             </div>
                             <div class="col-md-4 pl-2">
-                                <select name="role" id="" class="xinput xdrop-down full-width">
+                                <select name="role" id="role" class="xinput xdrop-down full-width">
                                     <option value="" selected></option>
                                     <option value="admin">Admin</option>
                                     <option value="employee">Employee</option>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 pr-2">
-                                <input class="xinput full-width" name="username" type="text" placeholder="Username *" value="" required>
+                                <input class="xinput full-width" id="username" name="username" type="text" placeholder="Username *" value="" required>
                             </div>
                             <div class="col-md-4 px-2">
                                 <input class="xinput full-width" name="password" type="password" placeholder="Password *" value="">
