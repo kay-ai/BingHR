@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-4 pl-2">
                                 <select name="role" id="role" class="xinput xdrop-down full-width">
-                                    <option value="" selected></option>
+                                    <option id="role-opt" value="" selected></option>
                                     <option value="admin">Admin</option>
                                     <option value="employee">Employee</option>
                                     <option value="hr_admin">HR Admin</option>
@@ -172,7 +172,7 @@
                         $('#email').val( response.user.email );
                         $('#username').val( response.user.username );
                         $('#role').val( response.user.role );
-                        $('#role').html( response.user.role );
+                        $('#role-opt').html( response.user.role );
                         $('#employee_id').val( response.user.employee_id );
                         $('#phone').val( response.user.phone );
                     }
