@@ -23,3 +23,6 @@ This will be for your database.
 * Run <code> php artisan db:seed </code>
 * Run <code> php artisan serve </code>
 * You are now all set
+
+## Contact
+* Email: favourobasi6@gmail.com
