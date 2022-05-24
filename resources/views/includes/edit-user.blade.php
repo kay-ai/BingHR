@@ -166,8 +166,11 @@
                         console.log( "No User Found");
                     } else {
                         // set values
-                        $('#edit-form').attr('action', '{{ route("users.edit", ":userid") }}');
-                        $('.v-fname').val( response.user.fname );
+                        $('#edit-form').attr('action', '{{ route("users.update", ":userid") }}');
+                        $('#first_name').val( response.user.first_name );
+                        $('#last_name').val( response.user.last_name );
+                        $('#email').val( response.user.email );
+                        $('#username').val( response.user.username );
                     }
                 },
                 complete: function(){
