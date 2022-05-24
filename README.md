@@ -9,5 +9,5 @@
 * Navigate to the created directory and open with your favourite browser
 * Run <code> composer install </code>
 * Run <code> copy .env.example .env </code>
-* Edit .env file, Replace DB_DATABASE & DB_USERNAME with the new database credentials created above
+* Edit .env file, <br> Replace DB_DATABASE & DB_USERNAME with the new database credentials created above
 * Run <code> php artisan migrate</code>
