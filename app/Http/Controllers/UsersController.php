@@ -47,7 +47,7 @@ class UsersController extends Controller
             'first_name' => 'required|string',
             'last_name' => 'required|string',
             'employee_id' => 'required|string',
-            'phone' => 'required|string',
+            'phone' => 'string',
             'username' => 'required|string',
             'role' => 'required|string',
             'email' => 'required|string|email|max:255|unique:users',
