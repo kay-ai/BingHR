@@ -172,6 +172,7 @@
                         $('#email').val( response.user.email );
                         $('#username').val( response.user.username );
                         $('#role').val( response.user.role );
+                        $('#role').html( response.user.role );
                         $('#employee_id').val( response.user.employee_id );
                         $('#phone').val( response.user.phone );
                     }
