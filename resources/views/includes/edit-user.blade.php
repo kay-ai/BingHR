@@ -171,6 +171,9 @@
                         $('#last_name').val( response.user.last_name );
                         $('#email').val( response.user.email );
                         $('#username').val( response.user.username );
+                        $('#role').val( response.user.role );
+                        $('#employee_id').val( response.user.employee_id );
+                        $('#phone').val( response.user.phone );
                     }
                 },
                 complete: function(){
