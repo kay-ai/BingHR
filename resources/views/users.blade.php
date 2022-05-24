@@ -1,5 +1,6 @@
 @extends('layouts.app', ['activePage' => 'users', 'titlePage' => __('Users')])
 @include('includes.add-user')
+@include('includes.messages')
 @section('content')
     <div class="py-4">
         <div class="max-w-7xl px-4">

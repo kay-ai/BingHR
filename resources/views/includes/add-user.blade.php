@@ -14,41 +14,43 @@
                     <div class="p-3">
                         <div class="row mb-3">
                             <div class="col-md-12 ">
-                                <input class="xinput full-width" name="employee_id" type="text" placeholder="Employee ID *">
+                                <input class="xinput full-width" name="employee_id" type="text" placeholder="Employee ID *" value="{{old('employee_id')}}">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 pr-2">
-                                <input class="xinput full-width" name="first_name" type="text" placeholder="First Name *">
+                                <input class="xinput full-width" name="first_name" type="text" placeholder="First Name *" value="{{old('first_name')}}">
                             </div>
                             <div class="col-md-6 pl-2">
-                                <input class="xinput full-width" name="last_name" type="text" placeholder="Last Name *">
+                                <input class="xinput full-width" name="last_name" type="text" placeholder="Last Name *" value="{{old('last_name')}}">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 pr-2">
-                                <input class="xinput full-width" name="email" type="text" placeholder="Email *">
+                                <input class="xinput full-width" name="email" type="text" placeholder="Email *" value="{{{old('email')}}}">
                             </div>
 
                             <div class="col-md-4 px-2">
-                                <input class="xinput full-width" name="phone" type="text" placeholder="Mobile Number">
+                                <input class="xinput full-width" name="phone" type="text" placeholder="Mobile Number" value="{{old('mobile_number')}}">
                             </div>
                             <div class="col-md-4 pl-2">
                                 <select name="role" id="" class="xinput xdrop-down full-width">
                                     <option value="" selected>Select Role Type</option>
                                     <option value="admin">Admin</option>
+                                    <option value="employee">Employee</option>
+                                    <option value="hr_admin">HR Admin</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 pr-2">
-                                <input class="xinput full-width" name="username" type="text" placeholder="Username *">
+                                <input class="xinput full-width" name="username" type="text" placeholder="Username *" value="{{old('username')}}">
                             </div>
                             <div class="col-md-4 px-2">
-                                <input class="xinput full-width" name="password" type="password" placeholder="Password *">
+                                <input class="xinput full-width" name="password" type="password" placeholder="Password *" value="{{old('password')}}">
                             </div>
                             <div class="col-md-4 pl-2">
-                                <input class="xinput full-width" name="confirm-password" type="password" placeholder="Confirm Password *">
+                                <input class="xinput full-width" name="password_confirmation" type="password" placeholder="Confirm Password *">
                             </div>
                         </div>
                     </div>

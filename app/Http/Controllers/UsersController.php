@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 
 class UsersController extends Controller
 {
@@ -34,7 +37,30 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'employee_id' => 'required|string',
+            'phone' => 'required|string',
+            'username' => 'required|string',
+            'role' => 'required|string',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|confirmed|min:6',
+        ]);
+
+        $user = new User();
+
+        $user->employee_id = $request->employee_id;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->phone = $request->phone;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->role = $request->role;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return back()->with('success', 'User Created Successfully');
     }
 
     /**
