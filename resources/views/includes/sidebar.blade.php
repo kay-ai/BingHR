@@ -28,22 +28,32 @@
     </ul>
 </nav>
 <nav id="sidebar">
-    <div class="sidebar-header">
-        {{-- <h3>Bootstrap Sidebar</h3>
-        <span class="app-logo" ><x-application-logo class="block h-10 w-auto fill-current text-gray-600" /></span> --}}
-    </div>
+    <div class="sidebar-header"></div>
 
     <ul class="list-unstyled components">
-        <li>
-            <a href="#">
+        <li class="{{ $activePage == 'dashboard' ? 'active' : '' }}">
+            <a href="{{route('dashboard')}}">
                 <i class="fa fa-list-ul" aria-hidden="true"></i>
-                <span class="link-text">Dasboard</span>
+                <span class="link-text">Dashboard</span>
             </a>
         </li>
-        <li class="active">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
+        <li class="{{ $activePage == 'users' ? 'active' : '' }}">
+            <a href="{{url('/users')}}">
                 <i class="fa fa-user-o" aria-hidden="true"></i>
                 <span class="link-text">Users</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-briefcase"></i>
+                <span class="link-text">Departments</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <span class="link-text">Employees</span>
             </a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
@@ -59,18 +69,6 @@
                     </a>
                 </li>
             </ul>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-briefcase"></i>
-                <span class="link-text">Departments</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-users" aria-hidden="true"></i>
-                <span class="link-text">Employees</span>
-            </a>
         </li>
         <li>
             <a href="#">
