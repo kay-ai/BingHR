@@ -29,7 +29,7 @@
                                             <td scope="row">
                                                 <div class="d-flex">
                                                     <div class="avatar">
-                                                        <img src="{{asset('img/avatar/female.jpg')}}" class="img-fluid ximg">
+                                                        <img src="{{$user->avatar}}" class="img-fluid ximg">
                                                     </div>
                                                     <div>
                                                         <p class="xname">{{ucfirst(strtolower($user->first_name))}} {{ucfirst(strtolower($user->last_name))}}</p>
@@ -39,16 +39,16 @@
                                             </td>
                                             <td>
                                                 @switch($user->role)
-                                                    @case($user->role == 'employee')
+                                                    @case('employee')
                                                         <span class="badge bg-light-blue">Employee</span>
                                                         @break
-                                                    @case($user->role == 'hr_admin')
+                                                    @case('hr_admin')
                                                         <span class="badge bg-green text-white">HR Admin</span>
                                                         @break
-                                                    @case($user->role == 'admin')
+                                                    @case('admin')
                                                         <span class="badge bg-blue text-white">Admin</span>
                                                         @break
-                                                    @case($user->role == 'super_admin')
+                                                    @case('super_admin')
                                                         <span class="badge bg-red text-white">Super Admin</span>
                                                         @break
                                                 @endswitch

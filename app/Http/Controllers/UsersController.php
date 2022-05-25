@@ -107,8 +107,7 @@ class UsersController extends Controller
             'phone' => 'string',
             'username' => 'required|string',
             'role' => 'required|string',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'email' => 'required|string|email|max:255'
         ]);
 
         $user = User::find($id);
@@ -120,11 +119,15 @@ class UsersController extends Controller
         $user->username = $request->username;
         $user->email = $request->email;
         $user->role = $request->role;
-        $user->password = Hash::make($request->password);
+        if($request->password){
+            $request->validate([
+                'password' => 'confirmed|min:6',
+            ]);
+            $user->password = Hash::make($request->password);
+        }
         $user->save();
 
         return back()->with('success', 'User Updated Successfully');
-  
     }
 
     /**

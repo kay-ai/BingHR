@@ -21,8 +21,13 @@ This will be for your database.
 * Run <code> php artisan migrate </code>
 * Run <code> php artisan db:seed </code>
 * Run <code> npm install </code>
-* Run <code> php artisan serve </code>
 * You are now all set
+
+## Starting Your Application
+* Run <code> php artisan serve </code>
+* Login with <br>
+    <b>Email:</b> admin@binghr.com
+    <b>Password:</b> pass1234
 
 ## Screenshot
 

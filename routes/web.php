@@ -25,5 +25,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', UsersController::class);
 
     Route::post('edit-user/{id}', [UsersController::class, 'editUser']);
+    Route::post('update-user/{id}', [UsersController::class, 'update'])->name('update.user');
 });
 require __DIR__.'/auth.php';

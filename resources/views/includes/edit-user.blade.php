@@ -9,6 +9,7 @@
                     </button>
             </div>
             <form id="edit-form" action="" method="POST" enctype="multipart/form-data">
+                @method('POST')
                 @csrf
                 <div class="modal-body p-0 mt-2">
                     <div class="p-3">
@@ -166,13 +167,28 @@
                         console.log( "No User Found");
                     } else {
                         // set values
-                        $('#edit-form').attr('action', '/users/update/'+userid);
+                        var url = '{{ route("update.user", ":id") }}';
+                        url = url.replace(':id', userid);
+                        $('#edit-form').attr('action', url);
                         $('#first_name').val( response.user.first_name );
                         $('#last_name').val( response.user.last_name );
                         $('#email').val( response.user.email );
                         $('#username').val( response.user.username );
-                        $('#role').val( response.user.role );
-                        $('#role-opt').html( response.user.role );
+                        $('#role-opt').val( response.user.role );
+                        switch (response.user.role) {
+                            case 'super_admin':
+                                $('#role-opt').html('Super Admin');
+                                break;
+                            case 'admin':
+                                $('#role-opt').html('Admin');
+                                break;
+                            case 'hr_admin':
+                                $('#role-opt').html('HR Admin');
+                                break;
+                            case 'employee':
+                                $('#role-opt').html('Employee');
+                                break;
+                        }
                         $('#employee_id').val( response.user.employee_id );
                         $('#phone').val( response.user.phone );
                     }
