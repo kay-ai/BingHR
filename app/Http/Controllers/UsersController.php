@@ -138,7 +138,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        if(auth()->user()->role == 'admin'){
+        if(auth()->user()->role == 'super_admin'){
             $user = User::findOrFail($id);
             $user->delete();
 
