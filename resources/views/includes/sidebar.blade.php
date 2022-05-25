@@ -78,7 +78,7 @@
         </li>
         <li>
             <a href="#">
-                <i class="fa fa-question"></i>
+                <i class="fa fa-question-circle-o" aria-hidden="true"></i>
                 <span class="link-text">Holidays</span>
             </a>
         </li>
@@ -96,7 +96,7 @@
         </li>
         <li>
             <a href="#">
-                <i class="fa fa-question"></i>
+                <i class="fa fa-user"></i>
                 <span class="link-text">Accounts</span>
             </a>
         </li>

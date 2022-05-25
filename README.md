@@ -26,7 +26,7 @@ This will be for your database.
 ## Starting Your Application
 * Run <code> php artisan serve </code>
 * Login with <br>
-    <b>Email:</b> admin@binghr.com
+    <b>Email:</b> admin@binghr.com<br>
     <b>Password:</b> pass1234
 
 ## Screenshot

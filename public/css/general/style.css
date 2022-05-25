@@ -276,6 +276,9 @@ margin-left: -13px;}
         margin-left: -80px !important;
     }
 
+    .xtable-name{
+        position: unset !important;
+    }
 
     /* Reappearing the sidebar on toggle button click */
     #sidebar {
@@ -509,4 +512,13 @@ line-height: 2;}
     right: 0;
     z-index: 999;
     top: 70;
+}
+
+.footer{
+    padding: 0 20px;
+    font-size: 12px;
+}
+
+.footer .col-md-12{
+    padding: 18px 0px;
 }

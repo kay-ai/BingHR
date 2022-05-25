@@ -32,6 +32,7 @@
             <div id="content">
                 @include('includes.navigation')
                 @yield('content')
+                @include('includes.footer')
             </div>
 
         </div>
