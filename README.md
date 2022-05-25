@@ -35,7 +35,7 @@ This will be for your database.
 ![Users Page](users.png)
 
 * Add Users Page
-![Add Users Page](add-users.png)
+![Add Users Page](add-user.png)
 
 ## Contact
 * Email: favourobasi6@gmail.com
